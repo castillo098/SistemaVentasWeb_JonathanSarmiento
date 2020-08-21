@@ -75,11 +75,11 @@ public class ClienteFacadeREST extends AbstractFacade<Cliente> {
     @POST
     @Path("create")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON})
-    public String create(@FormParam("id_cliente") int id_cliente, @FormParam("nombre") String nombre, @FormParam("direccion") String direccion,
+    public String create(@FormParam("id_cliente") Integer id_cliente, @FormParam("nombre") String nombre, @FormParam("direccion") String direccion,
             @FormParam("correo") String correo, @FormParam("telefono") String telefono, @FormParam("ciudad") String ciudad, @FormParam("edad") int edad,
             @FormParam("joyeria_preferencia") int joyeria_preferencia) {
 
-        Cliente cliente = new Cliente(id_cliente, nombre, direccion, correo, telefono, ciudad, edad, joyeria_preferencia);
+        Cliente cl = new Cliente(id_cliente, nombre, direccion, correo, telefono, ciudad, edad, joyeria_preferencia);
 
         return "Datos ingresados correctamente";
     }
@@ -104,12 +104,13 @@ public class ClienteFacadeREST extends AbstractFacade<Cliente> {
     }
 
     @POST
-    @Path("Delete")
+    @Path("delete")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON})
-    public int Eliminar(@FormParam("id_cliente") int id_cliente) {
+    public Integer Eliminar(@FormParam("id_cliente") Integer id_cliente) {
         Cliente c = super.find(id_cliente);
         super.remove(c);
         return id_cliente;
+
     }
 
     @POST

@@ -75,12 +75,12 @@ public class JoyeriaFacadeREST extends AbstractFacade<Joyeria> {
     @Path("create")
     @Produces({MediaType.APPLICATION_JSON, MediaType.APPLICATION_JSON})
     public String Crear(@FormParam("id_joyeria") int id_joyeria, @FormParam("nombre") String nombre, @FormParam("ubicacion") String ubicacion,
-            @FormParam("direccion") String direccion, @FormParam("nombre_encargado") String nombre_encargado, @FormParam("dimension_local") String diemension_local,
+            @FormParam("direccion") String direccion, @FormParam("nombre_encargado") String nombre_encargado, @FormParam("dimension_local") String dimension_local,
             @FormParam("ciudad") String ciudad) {
 
-        Joyeria j = new Joyeria(id_joyeria, nombre, ubicacion, direccion, nombre_encargado, diemension_local, ciudad);
+        Joyeria j = new Joyeria(id_joyeria, nombre, ubicacion, direccion, nombre_encargado, dimension_local, ciudad);
 
-        return "Dato ingresado correctamente";
+        return "Datos ingresado correctamente";
     }
 
     @POST
